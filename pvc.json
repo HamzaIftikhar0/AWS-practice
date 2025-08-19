@@ -1,0 +1,45 @@
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolumeClaim",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"PersistentVolumeClaim\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"chat-mongo\"},\"name\":\"mongo-data-pvc\",\"namespace\":\"mern-chat-app-core\"},\"spec\":{\"accessModes\":[\"ReadWriteOnce\"],\"resources\":{\"requests\":{\"storage\":\"1Gi\"}},\"storageClassName\":\"local\"}}\n",
+            "pv.kubernetes.io/bind-completed": "yes",
+            "pv.kubernetes.io/bound-by-controller": "yes"
+        },
+        "creationTimestamp": "2025-08-07T12:54:53Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2025-08-07T13:22:03Z",
+        "finalizers": [
+
+        "labels": {
+            "app": "chat-mongo"
+        },
+        "name": "mongo-data-pvc",
+        "namespace": "mern-chat-app-core",
+        "resourceVersion": "22206",
+        "uid": "bef6a0d9-3f28-4d94-8695-85dc690d645e"
+    },
+    "spec": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "resources": {
+            "requests": {
+                "storage": "1Gi"
+            }
+        },
+        "storageClassName": "local",
+        "volumeMode": "Filesystem",
+        "volumeName": "mongo-data-pv"
+    },
+    "status": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "capacity": {
+            "storage": "1Gi"
+        },
+        "phase": "Bound"
+    }
+}

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mern-chat-config
+  namespace: mern-chat-app-core
+data:
+  NODE_ENV: development
+  MONGO_DB_URI: mongodb://mern-chat-mongo-service.mern-chat-app-deps.svc.cluster.local:27017/mern-chat

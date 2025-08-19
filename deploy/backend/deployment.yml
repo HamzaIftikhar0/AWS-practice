@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mern-chat-backend-deployment
+  namespace: mern-chat-app-core
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-backend
+  template:
+    metadata:
+      labels:
+        app: chat-backend
+    spec:
+      containers:
+      - name: chat-backend
+        image: hamza2dev/mern-chat-backend-2:latest
+        ports:
+          - containerPort: 5000
+        envFrom:
+          - configMapRef:
+              name: mern-chat-config
+          - secretRef:
+              name: mern-chat-secret
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 30
+          periodSeconds: 15

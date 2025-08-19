@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: mern-chat-Kustomization 
+  namespace: mern-chat-app-core
+resources:
+  - deployment.yml
+  - service.yml
+  - secret.yml
+  - configmap.yml
+  - backend-alias-service.yaml    # ← add this line

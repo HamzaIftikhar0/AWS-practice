@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mern-chat-app-core
+
+
+  #--------------------------------------------------------------
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mern-chat-app-deps
